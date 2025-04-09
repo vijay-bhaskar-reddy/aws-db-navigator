@@ -3,7 +3,42 @@ import {{ useState }} from 'react';
 import {{ Card, CardContent }} from "@/components/ui/card";
 import {{ Button }} from "@/components/ui/button";
 
-const dataMap = {{ /* existing structure with pricing included */ }};
+const dataMap = {
+  "Databases": {
+    "RDS": {
+      "MySQL": {
+        "Single-AZ": [
+          "Lower cost",
+          "No failover",
+          "Development/test usage",
+          "$0.041/hour"
+        ],
+        "Multi-AZ Instance": [
+          "Automatic failover",
+          "Standby in separate AZ",
+          "Production-ready",
+          "$0.084/hour"
+        ]
+      },
+      "PostgreSQL": {
+        "Multi-AZ Cluster": [
+          "3-node synchronous replication",
+          "High availability",
+          "Zero data loss failover",
+          "$0.45/hour"
+        ]
+      }
+    },
+    "DynamoDB": {
+      "On-Demand": [
+        "No capacity planning",
+        "Pay per use",
+        "$1.25/million writes"
+      ]
+    }
+  }
+};
+
 
 export default function DatabaseNavigator() {{
   const [path, setPath] = useState([]);
